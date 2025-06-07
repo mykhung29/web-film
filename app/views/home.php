@@ -6,10 +6,18 @@
 
                 <?php foreach ($movies_slider as $movie): ?>
                     <div class="swiper-slide relative" data-post="<?php echo htmlspecialchars($movie['poster_url']) ?>">
-                        <img src="<?php echo $movie['thumb_url'] ?>" alt="Phim nổi bật 1"
-                            class="w-full aspect-[16/7] object-cover hidden lg:block" />
-                        <img src="<?php echo $movie['poster_url'] ?>" alt="Phim nổi bật 1"
-                            class="w-full h-full object-cover lg:hidden" />
+                        <div class="relative w-full aspect-[16/7] hidden lg:block">
+                            <img src="<?php echo $movie['thumb_url'] ?>" alt="<?php echo $movie['name'] ?>" class="w-full h-full object-cover" />
+                            <!-- Lớp phủ chấm liti -->
+                            <div class="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(gray_1px,transparent_2px)] bg-[length:5px_5px] opacity-10"></div>
+                        </div>
+
+                        <div class="relative w-full h-full lg:hidden">
+                            <img src="<?php echo $movie['poster_url'] ?>" alt="<?php echo $movie['name'] ?>" class="w-full h-full object-cover" />
+                            <!-- Lớp phủ chấm liti -->
+                            <div class="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(gray_1px,transparent_2px)] bg-[length:5px_5px] opacity-10"></div>
+                        </div>
+
                         <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-darker to-transparent">
                             <div class="mx-auto">
                                 <div class="max-w-2xl">
@@ -17,13 +25,12 @@
                                         class="hidden lg:inline-block px-3 py-1 bg-primary text-white text-sm font-medium rounded-full mb-4">Phim
                                         Đặc Sắc</span>
 
-                                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                                    <h2 class="text-3xl md:text-4xl font-bold mb-4 line-clamp-2">
                                         <?php echo $movie['name'] ?>
-                                    </h1>
+                                    </h2>
 
-                                    <p class="text-light mb-6 text-lg hidden lg:block">
-                                        Một vương quốc cổ đại nơi con người và rồng sống hòa thuận
-                                        với nhau, được bảo vệ bởi những con rồng thần thánh.
+                                    <p class="text-light mb-6 text-md hidden lg:block">
+                                        <?php echo $movie['content'] ?>
                                     </p>
 
                                     <div class="flex flex-wrap gap-4 mb-6">
@@ -1377,11 +1384,23 @@
                 <?php foreach ($movies_hoathinh_slider as $movie): ?>
 
                     <div class="swiper-slide relative " data-thumb="<?php echo htmlspecialchars($movie['thumb_url']) ?>">
-                        <img src="<?php echo $movie['thumb_url'] ?>" alt="<?php echo $movie['name'] ?>"
-                            class="h-full aspect-[16/6] object-cover hidden lg:block" />
+                        <!-- Ảnh thumb (hiển thị trên desktop) -->
+                        <div class="relative h-full hidden lg:block">
+                            <img src="<?php echo $movie['thumb_url'] ?>" alt="<?php echo $movie['name'] ?>"
+                                class="h-full aspect-[16/6] object-cover w-full" />
+                            
+                            <!-- Lớp phủ chấm liti -->
+                            <div class="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(gray_1px,transparent_2px)] bg-[length:5px_5px] opacity-10"></div>
+                        </div>
 
-                        <img src="<?php echo $movie['poster_url'] ?>" alt="<?php echo $movie['name'] ?>"
-                            class="w-full aspect-[3/4] object-cover lg:hidden" />
+                        <!-- Ảnh poster (hiển thị trên mobile) -->
+                        <div class="relative w-full lg:hidden">
+                            <img src="<?php echo $movie['poster_url'] ?>" alt="<?php echo $movie['name'] ?>"
+                                class="w-full aspect-[3/4] object-cover" />
+
+                            <!-- Lớp phủ chấm liti -->
+                            <div class="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(gray_1px,transparent_2px)] bg-[length:5px_5px] opacity-10"></div>
+                        </div>
 
                         <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-darker to-transparent">
                             <div class="mx-auto">
@@ -1389,10 +1408,10 @@
                                     <span
                                         class="hidden lg:inline-block px-3 py-1 bg-primary text-white text-sm font-medium rounded-full mb-4">Phim
                                         Mới</span>
-                                    <h1 class="text-3xl md:text-6xl font-bold mb-4 line-clamp-1">
+                                    <h2 class="text-3xl md:text-4xl font-bold mb-4 line-clamp-2">
                                         <?php echo $movie['name'] ?>
-                                    </h1>
-                                    <p class="text-light mb-6 text-lg hidden lg:block">
+                                    </h2>
+                                    <p class="text-light mb-6 text-md hidden lg:block">
                                         <?php echo $movie['content'] ?>
                                     </p>
                                     <div class="flex flex-wrap gap-4 mb-6">
