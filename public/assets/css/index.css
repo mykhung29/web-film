@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+body {
+  background-color: #0b1120;
+  color: #e2e8f0;
+  font-family: "Roboto", sans-serif;
+}
+
+.swiper-pagination-bullet {
+  background: #10b981;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #10b981;
+}
+
+.featured-slider .swiper-pagination {
+  position: absolute;
+  right: 20px;
+  width: auto;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  gap: 1rem;
+  /* justify-content: space-around; */
+}
+
+.featured-slider .swiper-pagination-bullet {
+  width: 60px;
+  height: 80px;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .featured-slider .swiper-pagination-bullet {
+    width: 30px;
+    height: 30px;
+    border-radius: 9999px;
+    margin: 5px 0;
+    opacity: 0.5;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.featured-slider .swiper-pagination-bullet-active {
+  opacity: 1;
+  border: 2px solid #10b981;
+}
+
+.anime-slider .swiper-pagination {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.anime-slider .swiper-pagination-bullet {
+  width: 100px;
+  height: 60px;
+  border-radius: 4px;
+  margin: 0 5px;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .anime-slider .swiper-pagination-bullet {
+    width: 50px;
+    height: 30px;
+    border-radius: 9999px;
+    margin: 0 5px;
+    opacity: 0.5;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.anime-slider .swiper-pagination-bullet-active {
+  opacity: 1;
+  border: 2px solid #10b981;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+}
+
+.action-btn {
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+}
+
+.action-btn.active {
+  color: #10b981;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0e9f6e;
+}
+
+/* Asian-inspired design elements */
+.asian-pattern {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="%2310B981" stroke-width="1" opacity="0.2"/></svg>');
+  background-repeat: repeat;
+}
+
+.theater-card {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.1) 0%,
+    rgba(11, 17, 32, 0.9) 100%
+  );
+}
+
+.upcoming-card {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.05) 0%,
+    rgba(11, 17, 32, 0.8) 100%
+  );
+}
+
+/* Live search styles */
+.search-results {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.search-results.active {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Infinite scroll loader */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #0f172a;
+  border-bottom-color: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Movie tooltip */
+.movie-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 17, 32, 0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.card:hover .movie-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Upcoming  */
+.upcoming-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(11, 17, 32, 0.9) 0%,
+    rgba(11, 17, 32, 0.7) 50%,
+    rgba(11, 17, 32, 0.3) 100%
+  );
+}
+
+/* Comments slider */
+.comments-slider {
+  padding: 1rem 0;
+}
+
+.comment-slide {
+  background: rgba(11, 17, 32, 0.7);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  height: 100%;
+}

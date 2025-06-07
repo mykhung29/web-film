@@ -1,0 +1,74 @@
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes bounceGentle {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #2c2c2e;
+    }
+    ::-webkit-scrollbar-thumb {
+        
+        border-radius: 4px;
+    }
+
+    /* Backdrop blur fallback */
+    .backdrop-blur-fallback {
+        background: rgba(44, 44, 46, 0.95);
+    }
+    
+    /* Mobile menu slide animation */
+    .mobile-menu {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+
+    /* Burger animation */
+    .burger-line {
+        transition: all 0.3s ease;
+    }
+    .burger-btn.active .burger-line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .burger-btn.active .burger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-btn.active .burger-line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
