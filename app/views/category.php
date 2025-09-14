@@ -4,8 +4,8 @@
         <div class="p-8">
             <!-- Page Header -->
             <div class="mb-8">
-                <h1 class="text-3xl md:text-4xl font-bold mb-4">Phim <?= $category['name'] ?></h1>
-                <p class="text-gray-400">Tổng hợp các bộ phim nổi bật thuộc thể loại <?= strtolower($category['name']) ?></p>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Phim <?= $taxonomy_info['name'] ?></h1>
+                <p class="text-gray-400">Tổng hợp các bộ phim nổi bật thuộc <?= strtolower($taxonomy_info['name']) ?></p>
             </div>
 
             <!-- Filter Section -->

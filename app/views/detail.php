@@ -250,8 +250,11 @@
                                             <div>
                                                 <h4 class="font-semibold"><?= htmlspecialchars($chapter['name']) ?></h4>
                                                 <p class="text-sm text-gray-400">
-                                                    <?= date("d/m/Y \l\ú\c H:i", strtotime($chapter['updated_at'])) ?>
-                                                </p>
+                                                    <?php if (!empty($chapter['updated_at'])): ?>
+                                                        <?= date("d/m/Y \l\ú\c H:i", strtotime($chapter['updated_at'])) ?>
+                                                    <?php else: ?>
+                                                        Chưa cập nhật
+                                                    <?php endif; ?>                                                </p>
                                             </div>
                                             <div
                                                 class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition">

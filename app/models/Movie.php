@@ -94,6 +94,7 @@ class Movie
     {
         $where = [];
         $params = [];
+        
 
        // Thể loại (categories_slug)
         if (!empty($filters['theloai'])) {
@@ -126,6 +127,7 @@ class Movie
             }
         }
 
+    
         // Loại phim (type)
         if (!empty($filters['type'])) {
             if (is_array($filters['type'])) {

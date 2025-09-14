@@ -68,7 +68,7 @@
                                     </div>
 
                                     <div class="flex items-center gap-4">
-                                        <a href="/xem/<?php echo $movie['slug'] ?>"
+                                        <a href="/xem/<?php echo $movie['slug'] ?>/<?php echo $movie['first_chap'] ?>"
                                             class="hidden lg:flex btn-action bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-full items-center">
                                             <i class="fas fa-play mr-2"></i> Xem ngay
                                         </a>
@@ -180,9 +180,9 @@
                             </div>
                             <!-- Tooltip on hover -->
                             <div class="movie-tooltip rounded-xl">
-                                <h3 class="font-bold text-xl mb-2"><?php echo $movie['name'] ?></h3>
-                                <p class="text-sm text-gray-300 mb-2"><?php echo $movie['origin_name'] ?></p>
-                                <div class="mb-3">
+                                <h3 class="font-semibold text-lg mb-1 line-clamp-2"><?php echo $movie['name'] ?></h3>
+                                <p class="text-sm text-gray-300 mb-2 line-clamp-2"><?php echo $movie['origin_name'] ?></p>
+                                <div class="mb-1">
                                     <span class="text-primary mr-1"><i class="fas fa-star"></i></span>
                                     <span>9.8</span>
                                 </div>
@@ -276,9 +276,9 @@
                                     </div>
                                     <!-- Tooltip on hover -->
                                     <div class="movie-tooltip rounded-xl">
-                                        <h3 class="font-bold text-xl mb-2"><?php echo $movie['name'] ?></h3>
-                                        <p class="text-sm text-gray-300 mb-2"><?php echo $movie['origin_name'] ?></p>
-                                        <div class="mb-3">
+                                        <h3 class="font-semibold text-lg mb-1 line-clamp-2"><?php echo $movie['name'] ?></h3>
+                                        <p class="text-sm text-gray-300 mb-2 line-clamp-2"><?php echo $movie['origin_name'] ?></p>
+                                        <div class="mb-1">
                                             <span class="text-primary mr-1"><i class="fas fa-star"></i></span>
                                             <span>9.2</span>
                                         </div>
@@ -351,9 +351,9 @@
                                     </div>
                                     <!-- Tooltip on hover -->
                                     <div class="movie-tooltip rounded-xl">
-                                        <h3 class="font-bold text-xl mb-2"><?php echo $movie['name'] ?></h3>
-                                        <p class="text-sm text-gray-300 mb-2"><?php echo $movie['origin_name'] ?></p>
-                                        <div class="mb-3">
+                                        <h3 class="font-semibold text-lg mb-1 line-clamp-2"><?php echo $movie['name'] ?></h3>
+                                        <p class="text-sm text-gray-300 mb-2 line-clamp-2"><?php echo $movie['origin_name'] ?></p>
+                                        <div class="mb-1">
                                             <span class="text-primary mr-1"><i class="fas fa-star"></i></span>
                                             <span>9.2</span>
                                         </div>
@@ -442,9 +442,9 @@
                                 </div>
                                 <!-- Tooltip on hover -->
                                 <div class="movie-tooltip rounded-xl">
-                                    <h3 class="font-bold text-xl mb-2"><?php echo $movie['name'] ?></h3>
-                                    <p class="text-sm text-gray-300 mb-2"><?php echo $movie['origin_name'] ?></p>
-                                    <div class="mb-3">
+                                    <h3 class="font-semibold text-lg mb-1 line-clamp-2"><?php echo $movie['name'] ?></h3>
+                                    <p class="text-sm text-gray-300 mb-2 line-clamp-2"><?php echo $movie['origin_name'] ?></p>
+                                    <div class="mb-1">
                                         <span class="text-primary mr-1"><i class="fas fa-star"></i></span>
                                         <span>9.2</span>
                                     </div>
@@ -529,9 +529,9 @@
                                 </div>
                                 <!-- Tooltip on hover -->
                                 <div class="movie-tooltip rounded-xl">
-                                    <h3 class="font-bold text-xl mb-2"><?php echo $movie['name'] ?></h3>
-                                    <p class="text-sm text-gray-300 mb-2"><?php echo $movie['origin_name'] ?></p>
-                                    <div class="mb-3">
+                                    <h3 class="font-semibold text-lg mb-1 line-clamp-2"><?php echo $movie['name'] ?></h3>
+                                    <p class="text-sm text-gray-300 mb-2 line-clamp-2"><?php echo $movie['origin_name'] ?></p>
+                                    <div class="mb-1">
                                         <span class="text-primary mr-1"><i class="fas fa-star"></i></span>
                                         <span>9.2</span>
                                     </div>
@@ -617,9 +617,9 @@
                                 </div>
                                 <!-- Tooltip on hover -->
                                 <div class="movie-tooltip rounded-xl">
-                                    <h3 class="font-bold text-xl mb-2"><?php echo $movie['name'] ?></h3>
-                                    <p class="text-sm text-gray-300 mb-2"><?php echo $movie['origin_name'] ?></p>
-                                    <div class="mb-3">
+                                    <h3 class="font-semibold text-lg mb-1 line-clamp-2"><?php echo $movie['name'] ?></h3>
+                                    <p class="text-sm text-gray-300 mb-2 line-clamp-2"><?php echo $movie['origin_name'] ?></p>
+                                    <div class="mb-1">
                                         <span class="text-primary mr-1"><i class="fas fa-star"></i></span>
                                         <span>9.2</span>
                                     </div>
@@ -789,9 +789,9 @@
                                 </div>
                                 <!-- Tooltip on hover -->
                                 <div class="movie-tooltip rounded-xl">
-                                    <h3 class="font-bold text-xl mb-2"><?php echo $movie['name'] ?></h3>
-                                    <p class="text-sm text-gray-300 mb-2"><?php echo $movie['origin_name'] ?></p>
-                                    <div class="mb-3">
+                                    <h3 class="font-semibold text-lg mb-1 line-clamp-2"><?php echo $movie['name'] ?></h3>
+                                    <p class="text-sm text-gray-300 mb-2 line-clamp-2"><?php echo $movie['origin_name'] ?></p>
+                                    <div class="mb-1">
                                         <span class="text-primary mr-1"><i class="fas fa-star"></i></span>
                                         <span>9.2</span>
                                     </div>
@@ -1522,9 +1522,9 @@
                                 </div>
                                 <!-- Tooltip on hover -->
                                 <div class="movie-tooltip rounded-xl">
-                                    <h3 class="font-bold text-xl mb-2"><?php echo $movie['name'] ?></h3>
-                                    <p class="text-sm text-gray-300 mb-2"><?php echo $movie['origin_name'] ?></p>
-                                    <div class="mb-3">
+                                    <h3 class="font-semibold text-lg mb-1 line-clamp-2"><?php echo $movie['name'] ?></h3>
+                                    <p class="text-sm text-gray-300 mb-2 line-clamp-2"><?php echo $movie['origin_name'] ?></p>
+                                    <div class="mb-1">
                                         <span class="text-primary mr-1"><i class="fas fa-star"></i></span>
                                         <span>9.2</span>
                                     </div>
@@ -1608,9 +1608,9 @@
                                 </div>
                                 <!-- Tooltip on hover -->
                                 <div class="movie-tooltip rounded-xl">
-                                    <h3 class="font-bold text-xl mb-2"><?php echo $movie['name'] ?></h3>
-                                    <p class="text-sm text-gray-300 mb-2"><?php echo $movie['origin_name'] ?></p>
-                                    <div class="mb-3">
+                                    <h3 class="font-semibold text-lg mb-1 line-clamp-2"><?php echo $movie['name'] ?></h3>
+                                    <p class="text-sm text-gray-300 mb-2 line-clamp-2"><?php echo $movie['origin_name'] ?></p>
+                                    <div class="mb-1">
                                         <span class="text-primary mr-1"><i class="fas fa-star"></i></span>
                                         <span>9.2</span>
                                     </div>
@@ -1765,8 +1765,8 @@
                         </div>
                         <!-- Tooltip on hover -->
                         <div class="movie-tooltip rounded-xl">
-                            <h3 class="font-bold text-xl mb-2"><?= $movie['name']; ?></h3>
-                            <p class="text-sm text-gray-300 mb-2"><?= $movie['origin_name']; ?></p>
+                            <h3 class="font-semibold text-lg mb-1 line-clamp-2"><?= $movie['name']; ?></h3>
+                            <p class="text-sm text-gray-300 mb-2 line-clamp-2"><?= $movie['origin_name']; ?></p>
 
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span class="bg-darker text-xs px-2 py-1 rounded">Anime</span>

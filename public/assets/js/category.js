@@ -5,8 +5,10 @@ function redirectFilters() {
 
   const checkboxes = document.querySelectorAll(".custom-checkbox:checked");
   checkboxes.forEach((checkbox) => {
-    const group = checkbox.closest("div").previousElementSibling?.textContent?.toLowerCase();
-    
+    const group = checkbox
+      .closest("div")
+      .previousElementSibling?.textContent?.toLowerCase();
+
     if (group.includes("thể loại")) {
       params.append("theloai[]", checkbox.value);
     } else if (group.includes("năm")) {
@@ -56,7 +58,6 @@ function redirectFilters() {
   window.location.href = `${baseUrl}?${params.toString()}`;
 }
 
-
 // Toggle filter dropdown
 function toggleFilter() {
   const dropdown = document.getElementById("filter-dropdown");
@@ -74,12 +75,19 @@ function applyFilters() {
     year: [],
     quocgia: [],
     version: [],
-    age: []
+    age: [],
   };
 
-  const knownCountries = ['viet-nam', 'trung-quoc', 'thai-lan', 'nhat-ban', 'my', 'han-quoc'];
-  const knownVersions = ['Vietsub', 'Thuyết Minh', 'Lồng Tiếng'];
-  const knownAges = ['all', '13+', '16+', '18+'];
+  const knownCountries = [
+    "viet-nam",
+    "trung-quoc",
+    "thai-lan",
+    "nhat-ban",
+    "my",
+    "han-quoc",
+  ];
+  const knownVersions = ["Vietsub", "Thuyết Minh", "Lồng Tiếng"];
+  const knownAges = ["all", "13+", "16+", "18+"];
 
   checkboxes.forEach((checkbox) => {
     const value = checkbox.value;
@@ -101,37 +109,55 @@ function applyFilters() {
   // Lấy slug thể loại hiện tại từ URL
   const currentPath = window.location.pathname;
   const match = currentPath.match(/\/the-loai\/([^\/?]+)/);
-  const currentGenre = match ? match[1] : 'tat-ca';
+  const currentGenre = match ? match[1] : "tat-ca";
 
   let selectedGenre = currentGenre;
   if (filters.theloai.includes(currentGenre)) {
-    filters.theloai = filters.theloai.filter(g => g !== currentGenre);
+    filters.theloai = filters.theloai.filter((g) => g !== currentGenre);
   } else if (filters.theloai.length > 0) {
     selectedGenre = filters.theloai[0];
-    filters.theloai = filters.theloai.filter(g => g !== selectedGenre);
+    filters.theloai = filters.theloai.filter((g) => g !== selectedGenre);
   }
 
   const params = new URLSearchParams();
-  filters.theloai.forEach(val => params.append("theloai[]", val));
-  filters.year.forEach(val => params.append("year[]", val));
-  filters.quocgia.forEach(val => params.append("quocgia[]", val));
-  filters.version.forEach(val => params.append("version[]", val));
-  filters.age.forEach(val => params.append("age[]", val));
+  filters.theloai.forEach((val) => params.append("theloai[]", val));
+  filters.year.forEach((val) => params.append("year[]", val));
+  filters.quocgia.forEach((val) => params.append("quocgia[]", val));
+  filters.version.forEach((val) => params.append("version[]", val));
+  filters.age.forEach((val) => params.append("age[]", val));
 
   const sort = document.querySelector("select")?.value;
   if (sort) {
     switch (sort) {
-      case "newest": params.set("sort_by", "year"); params.set("order", "DESC"); break;
-      case "oldest": params.set("sort_by", "year"); params.set("order", "ASC"); break;
-      case "most-viewed": params.set("sort_by", "views"); params.set("order", "DESC"); break;
-      case "least-viewed": params.set("sort_by", "views"); params.set("order", "ASC"); break;
-      case "rating-high": params.set("sort_by", "vote_average"); params.set("order", "DESC"); break;
-      case "rating-low": params.set("sort_by", "vote_average"); params.set("order", "ASC"); break;
+      case "newest":
+        params.set("sort_by", "year");
+        params.set("order", "DESC");
+        break;
+      case "oldest":
+        params.set("sort_by", "year");
+        params.set("order", "ASC");
+        break;
+      case "most-viewed":
+        params.set("sort_by", "views");
+        params.set("order", "DESC");
+        break;
+      case "least-viewed":
+        params.set("sort_by", "views");
+        params.set("order", "ASC");
+        break;
+      case "rating-high":
+        params.set("sort_by", "vote_average");
+        params.set("order", "DESC");
+        break;
+      case "rating-low":
+        params.set("sort_by", "vote_average");
+        params.set("order", "ASC");
+        break;
     }
   }
 
   const query = params.toString();
-  const finalUrl = `/the-loai/${selectedGenre}${query ? '?' + query : ''}`;
+  const finalUrl = `/the-loai/${selectedGenre}${query ? "?" + query : ""}`;
   window.location.href = finalUrl;
 }
 
@@ -204,8 +230,9 @@ document.querySelectorAll(".custom-checkbox").forEach((checkbox) => {
 });
 
 // Pagination
-document.querySelectorAll(".pagination-item:not(.disabled)")
-.forEach((button) => {
+document
+  .querySelectorAll(".pagination-item:not(.disabled)")
+  .forEach((button) => {
     button.addEventListener("click", function () {
       // Remove active class from all
       document.querySelectorAll(".pagination-item").forEach((btn) => {
@@ -218,21 +245,21 @@ document.querySelectorAll(".pagination-item:not(.disabled)")
       // Scroll to top
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-});
+  });
 
 //checked
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const activeFiltersContainer = document.getElementById("active-filters");
 
-  const filterKeys = ['theloai[]', 'quocgia[]', 'year[]', 'version[]', 'age[]'];
+  const filterKeys = ["theloai[]", "quocgia[]", "year[]", "version[]", "age[]"];
 
-  filterKeys.forEach(key => {
+  filterKeys.forEach((key) => {
     const values = params.getAll(key);
 
-    values.forEach(value => {
-      const tag = document.createElement('span');
-      tag.className = 'filter-tag flex items-center gap-1';
+    values.forEach((value) => {
+      const tag = document.createElement("span");
+      tag.className = "filter-tag flex items-center gap-1";
 
       tag.innerHTML = `
         ${value}
@@ -250,13 +277,13 @@ function removeFilter(key, value) {
   const params = new URLSearchParams(window.location.search);
 
   // Lấy tất cả value hiện tại, loại bỏ `value` được chọn
-  const values = params.getAll(key).filter(v => v !== value);
+  const values = params.getAll(key).filter((v) => v !== value);
 
   // Xoá tất cả value cũ
   params.delete(key);
 
   // Gắn lại các value còn lại
-  values.forEach(v => params.append(key, v));
+  values.forEach((v) => params.append(key, v));
 
   // Reset lại trang về 1 khi xoá
   params.delete("page");
@@ -264,10 +291,8 @@ function removeFilter(key, value) {
   // Reload trang với URL mới
   const baseUrl = window.location.pathname;
   const query = params.toString();
-  window.location.href = `${baseUrl}${query ? '?' + query : ''}`;
+  window.location.href = `${baseUrl}${query ? "?" + query : ""}`;
 }
-
-
 
 // Make tooltips stay visible when hovering over them
 document.addEventListener("DOMContentLoaded", function () {

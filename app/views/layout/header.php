@@ -70,7 +70,7 @@
                     <div class="absolute top-full left-0 mt-2 w-max bg-dark-card border border-primary/30 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit">
                             <?php foreach ($categories_list as $category): ?>
-                                <a href="the-loai/<?= $category['slug'] ?>" 
+                                <a href="/the-loai/<?= $category['slug'] ?>" 
                                 class="w-fit flex items-center p-3 text-white hover:bg-primary/10 hover:text-primary transition-all duration-300 border-b border-primary/10 last:border-b-0 sm:last:border-b hover:translate-x-1 text-sm sm:text-base">
                                     <i class="fa <?= $category['icon'] ?> mr-2 sm:mr-3 text-primary flex-shrink-0"></i>
                                     <span class="truncate"><?= $category['name'] ?></span>
@@ -89,7 +89,7 @@
                     <div class="absolute top-full left-0 mt-2 w-max bg-dark-card border border-primary/30 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit">
                             <?php foreach ($countries_list as $country): ?>
-                                <a href="the-loai/<?= $country['slug'] ?>" 
+                                <a href="/quoc-gia/<?= $country['slug'] ?>" 
                                 class="w-fit flex items-center p-3 text-white hover:bg-primary/10 hover:text-primary transition-all duration-300 border-b border-primary/10 last:border-b-0 sm:last:border-b hover:translate-x-1 text-sm sm:text-base">
                                    
                                     <span class="truncate"><?= $country['name'] ?></span>

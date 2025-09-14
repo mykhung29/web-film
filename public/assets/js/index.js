@@ -85,9 +85,10 @@ const genreSwiper = new Swiper(".genreSwiper", {
       spaceBetween: 10,
     },
     1024: {
-      slidesPerView: 8,
+      slidesPerView: 7,
       spaceBetween: 10,
     },
+    
   },
 });
 // Initialize Upcoming Movies Swiper
@@ -109,7 +110,7 @@ const upcomingSwiper = new Swiper(".upcomingSwiper", {
       slidesPerView: 4,
     },
     1280: {
-      slidesPerView: 5,
+      slidesPerView: 4,
     },
   },
 });
@@ -130,7 +131,7 @@ const theatersSwiper = new Swiper(".theatersSwiper", {
       slidesPerView: 4,
     },
     1280: {
-      slidesPerView: 5,
+      slidesPerView: 4,
     },
   },
 });
